@@ -102,8 +102,28 @@
                                 <li><strong>Excel Export:</strong> Export requirements with all fields to Excel format
                                 </li>
                                 <li><strong>Matrix Export:</strong> Export traceability matrix to Excel</li>
+                                <li><strong>ReqIF 1.2:</strong> Import and export requirements as ReqIF XML; export current project or an immutable baseline</li>
                                 <li><strong>Comprehensive Data:</strong> All metadata included in exports (categories,
                                     applicability, dates, etc.)</li>
+                            </ul>
+                        </div>
+                        <div class="feature-item">
+                            <h3>📸 Immutable Baselines</h3>
+                            <ul>
+                                <li><strong>Project Baselines:</strong> Create point-in-time snapshots of all requirement versions and traceability</li>
+                                <li><strong>Immutable:</strong> Baselines and their contents cannot be updated or deleted (enforced at DB and API level)</li>
+                                <li><strong>Version Snapshot:</strong> Each baseline stores which requirement version was current per requirement, plus the traceability matrix at creation time</li>
+                                <li><strong>Export from Baseline:</strong> ReqIF and UI support exporting a specific baseline for audits or releases</li>
+                                <li><strong>API & UI:</strong> Create, list, and view baselines via REST API and web UI (project Baselines section)</li>
+                            </ul>
+                        </div>
+                        <div class="feature-item">
+                            <h3>✅ Requirement Approval Workflow</h3>
+                            <ul>
+                                <li><strong>Detail page:</strong> Approval badge (draft / reviewed / approved), metadata (approved by, date), and actions: <em>Mark as Reviewed</em> and <em>Approve Requirement</em> (for project owners/managers) with confirmation modals</li>
+                                <li><strong>Edit when approved:</strong> Editing an approved requirement creates a new Draft version; user is warned and can cancel or proceed</li>
+                                <li><strong>Version history:</strong> Each version shows its approval state; list and detail show approval consistently</li>
+                                <li><strong>List view:</strong> Approval column and filters (<em>Approved only</em> / <em>Not approved</em>). Transitions are explicit and audit-friendly</li>
                             </ul>
                         </div>
                         <div class="feature-item">
@@ -259,27 +279,28 @@
                 <div class="c-card__body">
                     <h3>Web Interface</h3>
                     <div class="manual-section">
-                        <h4>Requirements Management</h4>
+                        <h4>Requirements</h4>
                         <p class="c-card__text">
-                            Navigate to <code>/requirements</code> to view and manage requirements. You can:
+                            Navigate to project requirements to view and manage requirements (with version history). You can:
                         </p>
                         <ul>
                             <li>Create new requirements with hierarchical structure</li>
                             <li>Edit existing requirements inline or via detail page</li>
-                            <li>Filter and search requirements</li>
+                            <li>Filter and search requirements (including <em>Approved only</em> / <em>Not approved</em>)</li>
                             <li>Assign categories, applicability, authors, and reviewers</li>
-                            <li>Track requirement status</li>
-                            <li>View requirement hierarchy in tree format</li>
+                            <li>Track requirement status and approval (Draft → Reviewed → Approved)</li>
+                            <li>View requirement hierarchy and version history</li>
+                            <li>On the detail page: use <em>Mark as Reviewed</em> and <em>Approve Requirement</em> (project owners/managers)</li>
                         </ul>
                     </div>
 
                     <div class="manual-section">
-                        <h4>Test Management</h4>
+                        <h4>Tests</h4>
                         <p class="c-card__text">
-                            Go to <code>/tests</code> to manage test cases. Features include:
+                            Go to project tests to manage test cases. Features include:
                         </p>
                         <ul>
-                            <li>Create and organize test cases</li>
+                            <li>Create and organize test cases (hierarchical)</li>
                             <li>Link tests to requirements via traceability matrix</li>
                             <li>Track test status and results</li>
                             <li>Document test sources and verification methods</li>
@@ -289,13 +310,25 @@
                     <div class="manual-section">
                         <h4>Traceability Matrix</h4>
                         <p class="c-card__text">
-                            Visit <code>/matrix</code> to view the traceability matrix. This provides:
+                            Visit project matrix to view the traceability matrix. This provides:
                         </p>
                         <ul>
                             <li>Visual mapping between requirements and tests</li>
-                            <li>Status indicators for each requirement-test link</li>
+                            <li>Status and suspect-link indicators for each requirement–test link</li>
                             <li>Filtering and search capabilities</li>
-                            <li>Export functionality to Excel</li>
+                            <li>Export to Excel</li>
+                        </ul>
+                    </div>
+
+                    <div class="manual-section">
+                        <h4>Baselines</h4>
+                        <p class="c-card__text">
+                            From the project dashboard or nav, open <strong>Baselines</strong> to:
+                        </p>
+                        <ul>
+                            <li>Create immutable point-in-time snapshots (current requirement versions + traceability)</li>
+                            <li>View baseline contents and metadata</li>
+                            <li>Export a specific baseline as ReqIF for audits or releases</li>
                         </ul>
                     </div>
 
@@ -305,9 +338,9 @@
                             Manage project-specific metadata:
                         </p>
                         <ul>
-                            <li><strong>Categories:</strong> Access <code>/categories</code> to create and manage
+                            <li><strong>Categories:</strong> Access project categories to create and manage
                                 requirement categories</li>
-                            <li><strong>Applicability:</strong> Visit <code>/applicability</code> to define product
+                            <li><strong>Applicability:</strong> Visit project applicability to define product
                                 lines, system types, or project scopes</li>
                         </ul>
                     </div>
@@ -315,23 +348,20 @@
                     <div class="manual-section">
                         <h4>Export Features</h4>
                         <ul>
-                            <li><strong>Requirements Export:</strong> Click "Export Excel" on the requirements page or
-                                homepage</li>
+                            <li><strong>Requirements Export:</strong> Click "Export Excel" on the requirements page or homepage</li>
                             <li><strong>Matrix Export:</strong> Click "Export Excel" on the matrix page</li>
-                            <li><strong>File Format:</strong> Downloads as <code>.xls</code> files with all metadata
-                                included</li>
+                            <li><strong>ReqIF Export:</strong> Use "Export → ReqIF (current)" for the live project, or "ReqIF (from baseline…)" to pick a baseline and download its snapshot as ReqIF 1.2 XML</li>
+                            <li><strong>File Format:</strong> Excel as <code>.xls</code>; ReqIF as XML</li>
                         </ul>
                     </div>
 
                     <div class="manual-section">
                         <h4>Import Features</h4>
                         <ul>
-                            <li><strong>Excel Parser:</strong> Standalone application to parse exported Excel files and
-                                import data via API</li>
-                            <li><strong>Data Import:</strong> Import requirements, tests, and traceability data from
-                                Excel files</li>
-                            <li><strong>API Integration:</strong> Seamless integration with the main application's REST
-                                API</li>
+                            <li><strong>Excel Parser:</strong> Standalone application to parse exported Excel files and import data via API</li>
+                            <li><strong>ReqIF 1.2 Import:</strong> Import requirements from ReqIF XML into a project (project ReqIF/Import page)</li>
+                            <li><strong>Data Import:</strong> Import requirements, tests, and traceability data from Excel or ReqIF</li>
+                            <li><strong>API Integration:</strong> Seamless integration with the main application's REST API</li>
                         </ul>
                     </div>
                 </div>
@@ -346,7 +376,8 @@
                 </div>
                 <div class="c-card__body">
                     <h3>Base URL</h3>
-                    <pre><code>http://localhost:8000/api/v1</code></pre>
+                    <pre><code>http://localhost:8000/api</code></pre>
+                    <p class="c-card__text">All API routes are mounted at <code>/api</code>. All operations are project-scoped where applicable.</p>
 
                     <h3>Endpoints</h3>
                     <div class="api-endpoints">
@@ -355,9 +386,11 @@
                             <ul>
                                 <li><code>GET /requirements</code> - List all requirements</li>
                                 <li><code>GET /requirements/{id}</code> - Get specific requirement</li>
+                                <li><code>GET /requirements/{id}/versions</code> - List versions (newest first)</li>
+                                <li><code>GET /requirements/{req_id}/versions/{version_id}</code> - Get specific version</li>
+                                <li><code>PUT /requirements/{req_id}/versions/{version_id}/approval</code> - Set approval state (body: <code>state</code>: "reviewed" | "approved"; project owners/managers)</li>
                                 <li><code>POST /requirements</code> - Create new requirement</li>
-                                <li><code>PATCH /requirements/{id}</code> - Partially update supported requirement
-                                    fields</li>
+                                <li><code>PATCH /requirements/{id}</code> - Partially update supported fields</li>
                                 <li><code>DELETE /requirements/{id}</code> - Delete requirement</li>
                             </ul>
                         </div>
@@ -367,6 +400,7 @@
                                 <li><code>GET /tests</code> - List all tests</li>
                                 <li><code>GET /tests/{id}</code> - Get specific test</li>
                                 <li><code>POST /tests</code> - Create new test</li>
+                                <li><code>POST /tests/{id}/field</code> - Partially update a test field (body: <code>field</code>, <code>value</code>)</li>
                                 <li><code>DELETE /tests/{id}</code> - Delete test</li>
                             </ul>
                         </div>
@@ -396,14 +430,57 @@
                                 <li><code>GET /matrix</code> - Get traceability matrix data</li>
                             </ul>
                         </div>
+                        <div class="endpoint-group">
+                            <h4>Baselines (immutable snapshots)</h4>
+                            <ul>
+                                <li><code>GET /projects/{project_id}/baselines</code> - List baselines</li>
+                                <li><code>GET /projects/{project_id}/baselines/{baseline_id}</code> - Get baseline metadata</li>
+                                <li><code>POST /projects/{project_id}/baselines</code> - Create baseline (body: <code>name</code>, <code>description</code>)</li>
+                                <li><code>GET /projects/{project_id}/baselines/{baseline_id}/requirements</code> - Get requirements in baseline</li>
+                                <li><code>GET /projects/{project_id}/baselines/{baseline_id}/traceability</code> - Get traceability snapshot</li>
+                            </ul>
+                        </div>
+                        <div class="endpoint-group">
+                            <h4>Users</h4>
+                            <ul>
+                                <li><code>GET /users</code> - List all users</li>
+                                <li><code>GET /users/{id}</code> - Get specific user</li>
+                                <li><code>POST /users</code> - Create new user</li>
+                                <li><code>DELETE /users/{id}</code> - Delete user</li>
+                            </ul>
+                        </div>
+                        <div class="endpoint-group">
+                            <h4>Status</h4>
+                            <ul>
+                                <li><code>GET /status</code> - List all status options</li>
+                                <li><code>GET /status/{id}</code> - Get specific status</li>
+                                <li><code>POST /status</code> - Create new status</li>
+                            </ul>
+                        </div>
+                        <div class="endpoint-group">
+                            <h4>Traceability</h4>
+                            <ul>
+                                <li><code>POST /traceability/clear_suspect</code> - Clear suspect flag for a link (body: <code>req_id</code>, <code>test_id</code>)</li>
+                            </ul>
+                        </div>
+                        <div class="endpoint-group">
+                            <h4>Semantic search (project-scoped; when enabled)</h4>
+                            <ul>
+                                <li><code>GET /projects/{project_id}/requirements/semantic_search</code> - Search by semantic similarity</li>
+                                <li><code>POST /projects/{project_id}/requirements/ask</code> - RAG answer over requirements</li>
+                                <li><code>POST /projects/{project_id}/requirements/reindex</code> - Reindex (admin)</li>
+                                <li><code>GET /projects/{project_id}/requirements/index_status</code> - Indexing status</li>
+                                <li><code>GET /projects/{project_id}/requirements/semantic_search/status</code> - Check if enabled</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <h3>Example API Usage</h3>
                     <pre><code># Get all requirements
-curl http://localhost:8000/api/v1/requirements
+curl http://localhost:8000/api/requirements
 
 # Create a new category
-curl -X POST http://localhost:8000/api/v1/categories \
+curl -X POST http://localhost:8000/api/categories \
   -H "Content-Type: application/json" \
   -d '{"title": "API", "description": "API requirements", "tag": "API"}'
 
@@ -454,7 +531,7 @@ curl -O http://localhost:8000/requirements.xls</code></pre>
 
         <!-- Footer -->
         <footer class="page-footer">
-            <p>&copy; 2024 ReqMan - Requirements Management System</p>
+            <p>&copy; 2025 ReqMan - Requirements Management System</p>
             <p class="footer-text">This project is open source. See LICENSE file for details.</p>
         </footer>
     </main>
