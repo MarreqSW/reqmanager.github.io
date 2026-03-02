@@ -1,6 +1,6 @@
 # Screenshots Directory
 
-This directory contains screenshots of the ReqMan application for display on the GitHub Pages site.
+This directory contains screenshots of the MarReq application for display on the GitHub Pages site.
 
 ## Required Screenshots
 
@@ -22,7 +22,7 @@ Please add the following screenshots to this directory:
 
 ## Taking Screenshots
 
-1. Start the ReqMan application: `cargo run --bin req_man`
+1. Start the MarReq application: `cargo run --bin mar_req`
 2. Navigate to each page in your browser
 3. Take screenshots using your browser's developer tools or a screenshot tool
 4. Save them with the exact filenames listed above

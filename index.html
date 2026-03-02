@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ReqMan - Requirements Management System</title>
+    <title>MarReq - Requirements Management System</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,9 @@
         <header class="page-header">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="logo.png" alt="ReqMan Logo" class="header-logo">
+                    <img src="logo.png" alt="MarReq Logo" class="header-logo">
                 </div>
-                <h1>Requirement Manager (ReqMan)</h1>
+                <h1>Requirement Manager (MarReq)</h1>
                 <p class="subtitle">A comprehensive web-based requirements and test management system</p>
             </div>
             <button data-theme-toggle class="theme-toggle c-theme-toggle" type="button" aria-label="Toggle dark mode"
@@ -39,17 +39,17 @@
         <section class="content-section">
             <div class="c-card">
                 <div class="c-card__header">
-                    <h2>About ReqMan</h2>
+                    <h2>About MarReq</h2>
                 </div>
                 <div class="c-card__body">
                     <p class="c-card__text">
-                        ReqMan is a comprehensive web-based requirements and test management system built with Rust,
+                        MarReq is a comprehensive web-based requirements and test management system built with Rust,
                         Rocket, and PostgreSQL.
                         This software provides a complete solution for managing hierarchical requirements, tests,
                         traceability matrices, and generating reports.
                     </p>
                     <p class="c-card__text">
-                        Whether you're managing software requirements, system specifications, or test cases, ReqMan
+                        Whether you're managing software requirements, system specifications, or test cases, MarReq
                         offers a modern,
                         intuitive interface with powerful features for organizing, tracking, and reporting on your
                         project's requirements and tests.
@@ -160,12 +160,12 @@
                 </div>
                 <div class="c-card__body">
                     <p class="c-card__text">
-                        Get a glimpse of ReqMan's modern interface and powerful features:
+                        Get a glimpse of MarReq's modern interface and powerful features:
                     </p>
                     <div class="screenshots-gallery">
                         <div class="screenshot-item">
                             <div class="screenshot-container" data-screenshot="screenshots/dashboard.png" data-caption="Dashboard - Overview of projects and requirements">
-                                <img src="screenshots/dashboard.png" alt="ReqMan Dashboard" class="screenshot-image"
+                                <img src="screenshots/dashboard.png" alt="MarReq Dashboard" class="screenshot-image"
                                     loading="lazy">
                                 <div class="screenshot-overlay">
                                     <p class="screenshot-caption">Dashboard - Overview of projects and requirements</p>
@@ -262,7 +262,7 @@
                     <ol>
                         <li>Start database: <code>docker compose up -d db</code></li>
                         <li>Initialize DB with sample data: <code>./scripts/setup_database.sh</code></li>
-                        <li>Start app: <code>cargo run --bin req_man</code></li>
+                        <li>Start app: <code>cargo run --bin mar_req</code></li>
                     </ol>
                     <p class="c-card__text">Then open <strong>http://localhost:8000</strong> in your browser (all demo
                         users use password <code>password</code>).</p>
@@ -516,13 +516,13 @@ curl -O http://localhost:8000/requirements.xls</code></pre>
                 </div>
                 <div class="c-card__body">
                     <ul>
-                        <li><a href="https://github.com/reqmanager/ReqMan" target="_blank"
+                        <li><a href="https://github.com/marreq/MarReq" target="_blank"
                                 rel="noopener noreferrer">GitHub Repository</a></li>
-                        <li><a href="https://github.com/reqmanager/ReqMan/blob/main/README.md" target="_blank"
+                        <li><a href="https://github.com/marreq/MarReq/blob/main/README.md" target="_blank"
                                 rel="noopener noreferrer">Full Documentation</a></li>
-                        <li><a href="https://github.com/reqmanager/ReqMan/blob/main/DATABASE_SETUP_README.md"
+                        <li><a href="https://github.com/marreq/MarReq/blob/main/DATABASE_SETUP_README.md"
                                 target="_blank" rel="noopener noreferrer">Database Setup Guide</a></li>
-                        <li><a href="https://github.com/reqmanager/ReqMan/blob/main/LICENSE" target="_blank"
+                        <li><a href="https://github.com/marreq/MarReq/blob/main/LICENSE" target="_blank"
                                 rel="noopener noreferrer">License</a></li>
                     </ul>
                 </div>
@@ -531,7 +531,7 @@ curl -O http://localhost:8000/requirements.xls</code></pre>
 
         <!-- Footer -->
         <footer class="page-footer">
-            <p>&copy; 2025 ReqMan - Requirements Management System</p>
+            <p>&copy; 2025 MarReq - Requirements Management System</p>
             <p class="footer-text">This project is open source. See LICENSE file for details.</p>
         </footer>
     </main>
